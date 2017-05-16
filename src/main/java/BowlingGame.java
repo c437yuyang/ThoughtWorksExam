@@ -6,11 +6,15 @@ public class BowlingGame {
     static private String miss2 = "[1-9]-";
 
     private static int ParseInt1st(String part) {
-        return Integer.parseInt(part.substring(0, 1));
+        if (part.substring(0, 1).equals("X")) {
+            return 10;
+        } else return Integer.parseInt(part.substring(0, 1));
     }
 
-    private static int ParseInt2nd(String code) {
-        return Integer.parseInt(code.substring(1, 2));
+    private static int ParseInt2nd(String part) {
+        if (part.substring(1, 2).equals("X") ) {
+            return 10;
+        } else return Integer.parseInt(part.substring(1, 2));
     }
 
     public static int computeScore(String[] codes) { //对除了倒数两击进行计算
